@@ -1,0 +1,121 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: myFont;
+    /* font-size: 20px; */
+}
+@font-face {
+    font-family: myFont;
+    src: url(../assets/font/BarlowSemiCondensed-Regular.ttf);
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(hsl(214, 47%, 23%) , hsl(237, 49%, 15%));
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+    height: max-content;
+    align-items: center;
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+    font-size: 25px;
+}
+.score{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px;
+    height: 100px;
+    width: 100px;
+    align-items: center;
+    gap:px;
+    font-size: 20px;
+    font-weight: 600;
+    color: hsl(229, 64%, 46%);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 10px;
+}
+.scoreCount{
+    font-size: 40px;
+    color: hsl(229, 25%, 31%);
+}
+.gameContainer{
+    background-image: url(../assets/images/bg-triangle.svg);
+    width: 400px;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: 50% 60%;
+    position: relative;
+}
+.triangle{
+   position: absolute;
+   z-index: -1;
+}
+.selections{
+    width: 120px;
+    height: 120px;
+    background:linear-gradient(hsl(230, 89%, 62%) , hsl(230, 89%, 65%)) ;
+    border-radius: 50%;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.selections::before{
+    content: '';
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    border-top:5px solid  hsla(217, 16%, 45%, 0.555) ;
+
+}
+.selections::after{
+    content: '';
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border-bottom:5px solid  hsla(230, 89%, 62%, 0.603);
+}
+.selections.scissor::after{
+    border-bottom:10px solid  hsla(39, 89%, 49%, 0.541) ;
+}
+.selections.rock::after{
+    border-bottom:10px solid  hsla(349, 86%, 49%, 0.527) ;
+}
+.selections.scissor{
+    top: 30px;
+    left: 280px;
+    background:linear-gradient(hsl(39, 89%, 49%) , hsl(40, 84%, 53%)) ;
+
+}
+.selections.rock{
+    top: 250px;
+    left: 150px;
+    background: linear-gradient(hsl(349, 71%, 52%) , hsl(349, 70%, 56%));
+}
+.selections img{
+    position: absolute;
+}
