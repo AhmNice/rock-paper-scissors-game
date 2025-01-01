@@ -1,3 +1,4 @@
+/* Existing code */
 *{
     padding: 0;
     margin: 0;
@@ -11,7 +12,7 @@
 }
 .container{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background: radial-gradient(hsl(214, 47%, 23%) , hsl(237, 49%, 15%));
     display: flex;
     align-items: center;
@@ -76,7 +77,7 @@
     cursor: not-allowed;
     z-index: 2000;
     position: relative;
-    isolation: isolate; /* Ensures pseudo-elements are in a new stacking context */
+    /* isolation: isolate; Ensures pseudo-elements are in a new stacking context */
 }
 .selection.winner::before {
     content: '';
@@ -90,6 +91,7 @@
     top: 50%; 
     left: 50%;
     transform: translate(-50%, -50%);
+   
 }
 
 .selection.winner::after {
@@ -103,6 +105,7 @@
     top: 50%; 
     left: 50%;
     transform: translate(-50%, -50%);
+   
 }
 .extra{
     display: none;
@@ -123,6 +126,7 @@
     top: 0;
     left: 0;
  }
+
 .title{
     display: flex;
     flex-direction: column;
@@ -160,7 +164,23 @@
     background-position: 50% 60%;
     position: relative;
     top: 150px;
+    /* background-color: red; */
     
+}
+.rule{
+    width: 100%;
+    padding: 20px;
+    z-index: 1;
+    margin-top:150px;
+    display: flex;
+    justify-content: flex-end;
+}
+.rule button{
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 50px;
+    cursor: pointer;
 }
 .hide{
     display: none;
@@ -209,13 +229,13 @@
     border-radius: 50%;
     border-bottom:5px solid  hsla(230, 89%, 62%, 0.603);
 }
-.selections.scissor::after{
+.selections.scissors::after{
     border-bottom:10px solid  hsla(39, 89%, 49%, 0.541) ;
 }
 .selections.rock::after{
     border-bottom:10px solid  hsla(349, 86%, 49%, 0.527) ;
 }
-.selections.scissor{
+.selections.scissors{
     top: 30px;
     left: 380px;
     background:linear-gradient(hsl(39, 89%, 49%) , hsl(40, 84%, 53%)) ;
@@ -286,4 +306,103 @@ button{
     font-family: myFont;
     font-weight: 600;
     color: hsl(217, 16%, 45%);
+}
+
+/* Media query for mobile phones */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+        height: 100vh;
+    }
+    .playing {
+        margin-top: 40px;
+        font-size: 20px;
+        top: 90px;
+    }
+    .header {
+        width: 100%;
+        padding: 10px;
+    }
+    .selection {
+        width: 80px;
+        height: 80px;
+    }
+    .selection.winner::before {
+        width: 100px;
+        height: 100px;
+    }
+    .selection.winner::after {
+        width: 300px;
+        height: 300px;
+    }
+    .selection.winner .extra {
+        width: 200px;
+        height: 200px;
+    }
+    .title {
+        font-size: 20px;
+    }
+    .score {
+        height: 80px;
+        width: 80px;
+        font-size: 16px;
+    }
+    .scoreCount {
+        font-size: 30px;
+    }
+    .gameContainer {
+        width: 100%;
+        height: 300px;
+        top: 10px;
+    }
+    .gameBoard {
+        width: 100%;
+        
+        top: 120px;
+        height: max-content;
+    }
+    .selections {
+        width: 80px;
+        height: 80px;
+        top: -10px;
+        left: 0;
+    }
+    .selections::before {
+        width: 60px;
+        height: 60px;
+    }
+    .selections::after {
+        width: 80px;
+        height: 80px;
+    }
+    .selections.scissors {
+        top: -10px;
+        left: 290px;
+    }
+    .selections.rock {
+        top: 200px;
+        left: 155px;
+    }
+    .result_btn {
+        font-size: 24px;
+    }
+    button {
+        padding: 8px 20px;
+        font-size: 18px;
+    }
+    .card {
+        width: 100%;
+        padding: 10px;
+    }
+    .overlay {
+        padding: 10px;
+    }
+    .cardhead {
+        font-size: 20px;
+        padding: 10px;
+    }
+    .cardhead img {
+        width: 20px;
+        height: 20px;
+    }
 }

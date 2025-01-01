@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>rock paper scissor</title>
+    <title>rock paper scissors</title>
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -21,7 +21,7 @@
             <div class="title">
                 <span>rock</span>
                 <span>paper</span>
-                <span>scissors</span>
+                <span>scissorss</span>
             </div>
             <div class="score">
                 <div>score</div>
@@ -32,7 +32,7 @@
             <div class="gameContainer ">
                 <div class="triangle"></div>
                 <div class="selections paper" data-selectedValue="paper"><img src="assets/images/icon-paper.svg" alt=""></div>
-                <div class="selections scissor" data-selectedValue="scissors"><img src="assets/images/icon-scissors.svg" alt=""></div>
+                <div class="selections scissors" data-selectedValue="scissors"><img src="assets/images/icon-scissors.svg" alt=""></div>
                 <div class="selections rock" data-selectedValue="rock"><img src="assets/images/icon-rock.svg" alt=""></div>
             </div>
             <div class="playing hide">
@@ -41,21 +41,25 @@
                     <p>The House Picked</p>
                 </div>
                 <div class="picks">
-                    <div class="extra"></div>
-                    <div class="selection" id="userPick"></div>
-
-                    <div class="result_btn">
-                        <p>winner</p>
-                        <button>Play Again</button>
+                    <div class="selection " id="userPick">
+                        <div class="extra"></div>
                     </div>
 
-                    <div class="selection winner"id="housePick">
+                    <div class="result_btn">
+                        <p id="winnerStatus"></p>
+                        <button class="playAgain">Play Again</button>
+                    </div>
+
+                    <div class="selection "id="housePick">
                         <div class="extra"></div>
-                        <div class="selections paper" data-selectedValue="paper"><img src="assets/images/icon-paper.svg" alt=""></div>
+                        
                     </div>
                 
                 </div>
             </div>
+        </div>
+        <div class="rule">
+            <button id="rule">Rule</button>
         </div>
     </div>
     <script src="assets/script.js"></script>
